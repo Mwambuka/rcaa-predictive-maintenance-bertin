@@ -1,0 +1,21 @@
+======================================================================
+INTERPRETABLE DECISION TREE RULES (max_depth=4)
+Use these as a rule-of-thumb reference for maintenance crews
+======================================================================
+
+|--- fault_roll5_sum <= 9.50
+|   |--- class: 0
+|--- fault_roll5_sum >  9.50
+|   |--- vibration_sensor_roll3_mean <= 1.59
+|   |   |--- temperature_sensor_2_roll5_mean <= 93.76
+|   |   |   |--- class: 0
+|   |   |--- temperature_sensor_2_roll5_mean >  93.76
+|   |   |   |--- temperature_sensor_2_roll5_mean <= 106.78
+|   |   |   |   |--- class: 1
+|   |   |   |--- temperature_sensor_2_roll5_mean >  106.78
+|   |   |   |   |--- class: 0
+|   |--- vibration_sensor_roll3_mean >  1.59
+|   |   |--- class: 0
+
+Train F1  : 0.6687
+Train Rec : 1.0000
